@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snapbite™ Menu</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 2rem 1rem;
+      background: #fffaf4;
+      color: #333;
+      max-width: 800px;
+      margin-inline: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #ff4f00;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      color: #333;
+      border-left: 6px solid #ff4f00;
+      padding-left: 0.5rem;
+      margin-top: 2.5rem;
+    }
+    .tagline {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 1rem;
+      padding-left: 0.5rem;
+    }
+    .item {
+      background: #fff;
+      border: 1px solid #ffe1cc;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(255, 79, 0, 0.08);
+    }
+    .item-name {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #222;
+    }
+    .item-price {
+      float: right;
+      color: #ff4f00;
+      font-weight: bold;
+    }
+    .item-desc {
+      font-size: 0.95rem;
+      margin-top: 0.3rem;
+      color: #555;
+    }
+    .order-wrap {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .order-btn {
+      background: #ff4f00;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(255, 79, 0, 0.2);
+      transition: 0.3s ease;
+    }
+    .order-btn:hover {
+      background: #e64a00;
+    }
+  </style>
+</head>
+<body>
+  <h1>Snapbite™ Menu</h1>
+
+  <!-- Burger Series -->
+  <h2>🍔 Burger Series</h2>
+  <div class="tagline">Honest burgers made fresh with 140gm craft beef or crispy chicken.</div>
+
+  <!-- Beef -->
+  <div class="item"><span class="item-name">Beef Burger</span><span class="item-price">RM10</span>
+    <div class="item-desc">Juicy 140gm beef patty with lettuce, pickles & Zesty Sauce.</div>
+  </div>
+  <div class="item"><span class="item-name">Beef & Cheese Burger</span><span class="item-price">RM11</span>
+    <div class="item-desc">Beef patty with melted cheddar & Zesty Sauce.</div>
+  </div>
+  <div class="item"><span class="item-name">Beef & Mushroom Burger</span><span class="item-price">RM13</span>
+    <div class="item-desc">Beef patty with sautéed mushrooms, cheese & Zesty Sauce.</div>
+  </div>
+  <div class="item"><span class="item-name">Loaded Beef Burger</span><span class="item-price">RM15</span>
+    <div class="item-desc">Beef patty stacked with bacon, egg, cheese & Zesty Sauce.</div>
+  </div>
+
+  <!-- Chicken -->
+  <div class="item"><span class="item-name">Original Crispy</span><span class="item-price">RM8</span>
+    <div class="item-desc">Crispy chicken thigh with lettuce & House Cream.</div>
+  </div>
+  <div class="item"><span class="item-name">Cheesy Crispy</span><span class="item-price">RM9</span>
+    <div class="item-desc">Fried chicken with melted cheese & House Cream.</div>
+  </div>
+  <div class="item"><span class="item-name">Crispy Mushroom Chicken</span><span class="item-price">RM11</span>
+    <div class="item-desc">Fried chicken with mushrooms, cheese & House Cream.</div>
+  </div>
+  <div class="item"><span class="item-name">Loaded Crispy Chicken</span><span class="item-price">RM13</span>
+    <div class="item-desc">Crispy chicken with bacon, cheese & House Cream.</div>
+  </div>
+
+  <!-- Tex-Mex Series -->
+  <h2>🌮 Tex-Mex Series</h2>
+  <div class="tagline">All served with Snapbite™ Zesty Sauce. Choose soft (1 pc) or hard taco (2 pcs).</div>
+
+  <div class="item"><span class="item-name">Beef Taco</span><span class="item-price">RM10</span>
+    <div class="item-desc">Beef, fresh veggies, served in soft or hard shell.</div>
+  </div>
+  <div class="item"><span class="item-name">Chicken Taco</span><span class="item-price">RM9</span>
+    <div class="item-desc">Juicy chicken, veggies, soft or hard shell.</div>
+  </div>
+  <div class="item"><span class="item-name">Mix Taco</span><span class="item-price">RM12</span>
+    <div class="item-desc">Half beef, half chicken, fresh toppings, any shell.</div>
+  </div>
+  <div class="item"><span class="item-name">Beef Quesadilla</span><span class="item-price">RM16</span>
+    <div class="item-desc">Beef & mozzarella folded in grilled tortilla.</div>
+  </div>
+  <div class="item"><span class="item-name">Chicken Quesadilla</span><span class="item-price">RM15</span>
+    <div class="item-desc">Chicken & cheese grilled in warm tortilla.</div>
+  </div>
+  <div class="item"><span class="item-name">Mix Quesadilla</span><span class="item-price">RM17</span>
+    <div class="item-desc">Half beef, half chicken with mozzarella inside grilled tortilla.</div>
+  </div>
+
+  <!-- Pasta Series -->
+  <h2>🍝 Pasta Series</h2>
+  <div class="tagline">Comfort bowls for every kind of craving.</div>
+
+  <div class="item"><span class="item-name">Mac & Cheese</span><span class="item-price">RM8</span>
+    <div class="item-desc">Creamy mac & cheese. Topped with beef bacon or popcorn chicken.</div>
+  </div>
+  <div class="item"><span class="item-name">Creamy Truffle Pasta</span><span class="item-price">RM8</span>
+    <div class="item-desc">Silky truffle cream pasta with a gentle touch of garlic.</div>
+  </div>
+  <div class="item"><span class="item-name">Beef Bolognese</span><span class="item-price">RM8</span>
+    <div class="item-desc">Classic tomato-based beef pasta. Rich and satisfying.</div>
+  </div>
+  <div class="item"><span class="item-name">Creamy Chicken Pasta</span><span class="item-price">RM8</span>
+    <div class="item-desc">White sauce pasta topped with popcorn chicken.</div>
+  </div>
+
+  <!-- Snack Series -->
+  <h2>🍟 Snack Series</h2>
+  <div class="tagline">Best served hot – great for sharing or solo cravings.</div>
+
+  <div class="item"><span class="item-name">Cheesy Fries</span><span class="item-price">RM5</span>
+    <div class="item-desc">Golden fries topped with creamy cheese sauce.</div>
+  </div>
+  <div class="item"><span class="item-name">Popcorn Chicken</span><span class="item-price">RM6</span>
+    <div class="item-desc">Crispy bite-sized chicken pieces, fried to perfection.</div>
+  </div>
+  <div class="item"><span class="item-name">Loaded Fries</span><span class="item-price">RM8</span>
+    <div class="item-desc">Fries topped with beef bolognese sauce and melted cheese.</div>
+  </div>
+
+  <!-- ORDER BUTTON -->
+  <div class="order-wrap">
+    <a id="orderBtn" href="https://abgspekfoodie.github.io/Snapbite-Order/" class="order-btn">ORDER NOW</a>
+  </div>
+</body>
+</html>
