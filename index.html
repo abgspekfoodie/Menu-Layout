@@ -96,17 +96,56 @@
       background: linear-gradient(to right, #e65c00, #cc2b00);
       box-shadow: 0 6px 18px rgba(255, 79, 0, 0.35);
     }
+
+    .emoji-run {
+      margin-top: 1.5rem;
+      font-size: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .emoji-run.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .emoji-run span {
+      display: inline-block;
+      animation: spin 1s linear infinite, run 1s ease-in-out infinite alternate;
+    }
+
+    .emoji-run span:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    .emoji-run span:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes run {
+      from { transform: translateX(0); }
+      to { transform: translateX(15px); }
+    }
   </style>
 </head>
 <body>
 
   <h1>Snapbite™ Menu</h1>
 
-
+  <!-- Burger Series -->
   <h2>🍔 Burger Series</h2>
   <div class="tagline">Honest burgers made fresh with 140gm craft beef or crispy chicken.</div>
 
-  
+  <!-- Beef -->
   <div class="item"><span class="item-name">Beef Burger</span><span class="item-price">RM10</span>
     <div class="item-desc">Juicy 140gm beef patty with lettuce, pickles & Zesty Sauce.</div>
   </div>
@@ -120,7 +159,7 @@
     <div class="item-desc">Beef patty stacked with bacon, egg, cheese & Zesty Sauce.</div>
   </div>
 
-
+  <!-- Chicken -->
   <div class="item"><span class="item-name">Original Crispy</span><span class="item-price">RM8</span>
     <div class="item-desc">Crispy chicken thigh with lettuce & House Cream.</div>
   </div>
@@ -134,6 +173,7 @@
     <div class="item-desc">Crispy chicken with bacon, cheese & House Cream.</div>
   </div>
 
+  <!-- Tex-Mex Series -->
   <h2>🌮 Tex-Mex Series</h2>
   <div class="tagline">All served with Snapbite™ Zesty Sauce. Choose soft (1 pc) or hard taco (2 pcs).</div>
 
@@ -156,6 +196,7 @@
     <div class="item-desc">Half beef, half chicken with mozzarella inside grilled tortilla.</div>
   </div>
 
+  <!-- Pasta Series -->
   <h2>🍝 Pasta Series</h2>
   <div class="tagline">Comfort bowls for every kind of craving.</div>
 
@@ -172,6 +213,7 @@
     <div class="item-desc">White sauce pasta topped with popcorn chicken.</div>
   </div>
 
+  <!-- Snack Series -->
   <h2>🍟 Snack Series</h2>
   <div class="tagline">Best served hot – great for sharing or solo cravings.</div>
 
@@ -185,9 +227,25 @@
     <div class="item-desc">Fries topped with beef bolognese sauce and melted cheese.</div>
   </div>
 
+  <!-- ORDER BUTTON -->
   <div class="order-wrap">
     <a id="orderBtn" href="https://abgspekfoodie.github.io/Snapbite-Order/" class="order-btn">ORDER NOW</a>
+    <div class="emoji-run" id="emojiRun">
+      <span>🍔</span><span>🌮</span><span>🌭</span>
+    </div>
   </div>
+
+  <script>
+    document.getElementById("orderBtn").addEventListener("click", function(e) {
+      e.preventDefault();
+      const emojiRun = document.getElementById("emojiRun");
+      emojiRun.classList.add("active");
+
+      setTimeout(() => {
+        window.location.href = this.href;
+      }, 2000);
+    });
+  </script>
 
 </body>
 </html>
