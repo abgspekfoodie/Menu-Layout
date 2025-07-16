@@ -113,27 +113,61 @@
       transform: translateY(0);
     }
 
-    .emoji-run span {
+    /* Overlay */
+    .overlay-dim {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .overlay-dim.show {
+      display: flex;
+    }
+
+    .loader-emoji {
+      font-size: 3rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .loader-emoji span {
+      animation: dance 0.6s ease-in-out infinite alternate;
       display: inline-block;
-      animation: spin 1s linear infinite, run 1s ease-in-out infinite alternate;
     }
 
-    .emoji-run span:nth-child(2) {
-      animation-delay: 0.1s;
+    .loader-emoji span:nth-child(1) {
+      animation-delay: 0s;
     }
 
-    .emoji-run span:nth-child(3) {
-      animation-delay: 0.2s;
+    .loader-emoji span:nth-child(2) {
+      animation-delay: 0.15s;
     }
 
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    .loader-emoji span:nth-child(3) {
+      animation-delay: 0.3s;
     }
 
-    @keyframes run {
-      from { transform: translateX(0); }
-      to { transform: translateX(15px); }
+    @keyframes dance {
+      0%   { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(-10px) rotate(-10deg); }
+    }
+
+    .overlay-dim .text {
+      color: #ff6f00;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      font-family: 'Poppins', sans-serif;
+      animation: fadeIn 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
     }
   </style>
 </head>
@@ -151,79 +185,6 @@
   <div class="item"><span class="item-name">Beef & Cheese Burger</span><span class="item-price">RM11</span>
     <div class="item-desc">Beef patty with melted cheddar & Zesty Sauce.</div>
   </div>
-  <div class="item"><span class="item-name">Beef & Mushroom Burger</span><span class="item-price">RM13</span>
-    <div class="item-desc">Beef patty with sautéed mushrooms, cheese & Zesty Sauce.</div>
-  </div>
-  <div class="item"><span class="item-name">Loaded Beef Burger</span><span class="item-price">RM15</span>
-    <div class="item-desc">Beef patty stacked with bacon, egg, cheese & Zesty Sauce.</div>
-  </div>
-
-  <div class="item"><span class="item-name">Original Crispy</span><span class="item-price">RM8</span>
-    <div class="item-desc">Crispy chicken thigh with lettuce & House Cream.</div>
-  </div>
-  <div class="item"><span class="item-name">Cheesy Crispy</span><span class="item-price">RM9</span>
-    <div class="item-desc">Fried chicken with melted cheese & House Cream.</div>
-  </div>
-  <div class="item"><span class="item-name">Crispy Mushroom Chicken</span><span class="item-price">RM11</span>
-    <div class="item-desc">Fried chicken with mushrooms, cheese & House Cream.</div>
-  </div>
-  <div class="item"><span class="item-name">Loaded Crispy Chicken</span><span class="item-price">RM13</span>
-    <div class="item-desc">Crispy chicken with bacon, cheese & House Cream.</div>
-  </div>
-
-  <!-- Tex-Mex Series -->
-  <h2>🌮 Tex-Mex Series</h2>
-  <div class="tagline">All served with Snapbite™ Zesty Sauce. Choose soft (1 pc) or hard taco (2 pcs).</div>
-
-  <div class="item"><span class="item-name">Beef Taco</span><span class="item-price">RM10</span>
-    <div class="item-desc">Beef, fresh veggies, served in soft or hard shell.</div>
-  </div>
-  <div class="item"><span class="item-name">Chicken Taco</span><span class="item-price">RM9</span>
-    <div class="item-desc">Juicy chicken, veggies, soft or hard shell.</div>
-  </div>
-  <div class="item"><span class="item-name">Mix Taco</span><span class="item-price">RM12</span>
-    <div class="item-desc">Half beef, half chicken, fresh toppings, any shell.</div>
-  </div>
-  <div class="item"><span class="item-name">Beef Quesadilla</span><span class="item-price">RM16</span>
-    <div class="item-desc">Beef & mozzarella folded in grilled tortilla.</div>
-  </div>
-  <div class="item"><span class="item-name">Chicken Quesadilla</span><span class="item-price">RM15</span>
-    <div class="item-desc">Chicken & cheese grilled in warm tortilla.</div>
-  </div>
-  <div class="item"><span class="item-name">Mix Quesadilla</span><span class="item-price">RM17</span>
-    <div class="item-desc">Half beef, half chicken with mozzarella inside grilled tortilla.</div>
-  </div>
-
-  <!-- Pasta Series -->
-  <h2>🍝 Pasta Series</h2>
-  <div class="tagline">Comfort bowls for every kind of craving.</div>
-
-  <div class="item"><span class="item-name">Mac & Cheese</span><span class="item-price">RM8</span>
-    <div class="item-desc">Creamy mac & cheese. Topped with beef bacon or popcorn chicken.</div>
-  </div>
-  <div class="item"><span class="item-name">Creamy Truffle Pasta</span><span class="item-price">RM8</span>
-    <div class="item-desc">Silky truffle cream pasta with a gentle touch of garlic.</div>
-  </div>
-  <div class="item"><span class="item-name">Beef Bolognese</span><span class="item-price">RM8</span>
-    <div class="item-desc">Classic tomato-based beef pasta. Rich and satisfying.</div>
-  </div>
-  <div class="item"><span class="item-name">Creamy Chicken Pasta</span><span class="item-price">RM8</span>
-    <div class="item-desc">White sauce pasta topped with popcorn chicken.</div>
-  </div>
-
-  <!-- Snack Series -->
-  <h2>🍟 Snack Series</h2>
-  <div class="tagline">Best served hot – great for sharing or solo cravings.</div>
-
-  <div class="item"><span class="item-name">Cheesy Fries</span><span class="item-price">RM5</span>
-    <div class="item-desc">Golden fries topped with creamy cheese sauce.</div>
-  </div>
-  <div class="item"><span class="item-name">Popcorn Chicken</span><span class="item-price">RM6</span>
-    <div class="item-desc">Crispy bite-sized chicken pieces, fried to perfection.</div>
-  </div>
-  <div class="item"><span class="item-name">Loaded Fries</span><span class="item-price">RM8</span>
-    <div class="item-desc">Fries topped with beef bolognese sauce and melted cheese.</div>
-  </div>
 
   <!-- ORDER BUTTON -->
   <div class="order-wrap">
@@ -233,11 +194,25 @@
     </div>
   </div>
 
+  <!-- OVERLAY LOADER -->
+  <div class="overlay-dim" id="overlayDim">
+    <div class="loader-emoji">
+      <span>🌮</span>
+      <span>🍔</span>
+      <span>🌭</span>
+    </div>
+    <div class="text">Redirecting to order page…</div>
+  </div>
+
   <script>
     document.getElementById("orderBtn").addEventListener("click", function(e) {
       e.preventDefault();
       const emojiRun = document.getElementById("emojiRun");
+      const overlay = document.getElementById("overlayDim");
+
       emojiRun.classList.add("active");
+      overlay.classList.add("show");
+
       setTimeout(() => {
         window.location.href = this.href;
       }, 2000);
